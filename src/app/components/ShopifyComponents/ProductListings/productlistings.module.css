@@ -1,0 +1,23 @@
+.listings{
+    position: relative;
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 80%;
+    min-height: 80vh;
+    padding: 1vw 10%;
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+ .listings{
+    padding: 1.5vw 10%;
+ }
+}
+ 
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .listings{
+        width: 90%;
+        padding: 2vw 5%;
+    }
+}

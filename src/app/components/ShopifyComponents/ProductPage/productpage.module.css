@@ -1,0 +1,418 @@
+.productPage{
+    display: inline-flex;
+    width: 60%;
+    margin: 0 20%;
+    padding: 4vw 0;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    min-height: 80vh;
+}
+
+.images{
+    width: 55%;
+    position: relative;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.mainImg{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+}
+
+.imgCarousel{
+    position: relative;
+    width: 100%;
+    height: 10vw;
+}
+.imgCarousel>div{
+    width: 100%;
+    height: 100%;
+}
+.imgCarousel img{
+    height: 10vw;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.content{
+    width: 40%;
+    --vertical-padding: 0.5vw;
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+.title{
+    font-family: var(--secondary-font);
+    font-size: 3rem;
+    margin-top: 2vw !important;
+    color: var(--primary-color);
+}
+
+.description{
+    font-size: 1.3rem;
+    margin-top: 1vw;
+    font-weight: 400;
+    line-height: 2rem;
+}
+
+.price{
+    display: inline-block;
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin-top: 1.5vw;
+    color: var(--primary-color);
+    font-weight: 500;
+    padding-bottom: 0vw;
+}
+
+.oldPrice{
+    margin-left: 0.2vw;
+    font-size: 1.4rem;
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
+.optionInput{
+    visibility: hidden;
+}
+
+.optionLabel{
+    padding: 0.5vw 1.5vw !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid var(--primary-text-color);
+}
+
+.notAvailable .optionLabel{
+    border-color: var(--disabled-grey);
+    /* text-decoration: line-through; */
+    color: var(--disabled-grey);
+}
+
+.notAvailable{
+    pointer-events: none;
+    border-color: var(--disabled-grey);
+}
+
+.optionInput:checked+.optionLabel{
+    background-color: var(--primary-color);
+    color: var(--secondary-text-color);
+    border-color: var(--primary-color);
+}
+
+.optionElem{
+    display: inline-block;
+}
+
+.content input:not(input[type='submit']):not(input[type='hidden']):focus, .content textarea:focus, .content select:focus, .numberInput button:focus{
+    border: 1px solid var(--primary-color) !important;
+    outline: 1px solid var(--primary-color) !important;
+}
+
+.content label:not(.optionLabel){
+    padding-top: 1.5vw;
+    display: inline-block;
+    width: 100%;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding-bottom: 0.5vw;
+
+}
+
+.content label + input[type='text'], .content label + textarea, .content label + select, .content div[data-class='half-input'] label + input:not(input[type='submit']):not(input[type='hidden']){
+    margin:0;
+}
+
+.numberInput input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    border-radius: 0px;
+  }
+  
+  .numberInput input[type=number]::-webkit-inner-spin-button,
+  .numberInput input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+  
+  .numberInput {
+    display: inline-flex;
+    
+  }
+  
+  .numberInput,
+  .numberInput * {
+    box-sizing: border-box;
+  }
+  
+  .numberInput button {
+    outline:none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    width: 3vw;
+    height: 3vw;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+    border: 1px solid var(--disabled-grey);
+    outline: 1px solid transparent !important;
+    color: var(--primary-text-color);
+  }
+  
+  .numberInput button:after {
+    display: inline-block;
+    position: absolute;
+    font-weight:500;
+    content: '-';
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+  }
+
+  .numberInput button.plus:after {
+    transform: translate(-50%, -50%);
+    content: '+';
+  }
+
+  .sizeOptionInput{
+
+  }
+
+  .colorOptionInput{
+
+  }
+
+  .minus{
+    border-right: none !important;
+  }
+
+  .elemDisabled{
+    color: var(--disabled-grey) !important;
+    pointer-events: none;
+    border-color: var(--disabled-grey);
+  }
+
+  .plus{
+    border-left: none !important;
+  }
+  
+  .numberInput input[type=number] {
+    font-size: 1.2rem;
+    border: 1px solid var(--disabled-grey) !important;
+    border-left: none !important;
+    border-right: none !important;
+    outline: 1px solid transparent !important;
+    color: var(--primary-text-color);
+    text-align: center;
+    width: 3vw;
+    height: 3vw;
+  }
+  .backArrow{
+    transform: translateX(20px);
+    opacity: 0;
+    position: absolute;
+    top:0;
+    left:0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--primary-color);;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+  .backArrow svg{
+    width: 1.8vw;
+    aspect-ratio: 1/1;
+  }
+  .backArrow svg path{
+    fill: var(--primary-color);
+  }
+
+  /* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+  .productPage{
+    width: 80%;
+    margin: 0 10%;
+    padding: 5vw 0;
+}
+
+.images{
+    width: 50%;
+}
+
+.imgCarousel{
+    height: 15vw;
+    margin-top: 0.5vw;
+}
+.imgCarousel img{
+    height: 12vw;
+}
+
+.content{
+    --vertical-padding: 1vw;
+    width: 45%;
+}
+
+.title{
+    font-size: 3.2rem;
+    margin-top: 3vw !important;
+}
+
+.description{
+    font-size: 1.4rem;
+    margin-top: 1.5vw;
+    line-height: 2.4rem;
+}
+
+.price{
+    font-size: 2.2rem;
+    margin-top: 2vw;
+}
+
+.oldPrice{
+    margin-left: 0.4vw;
+    font-size: 1.6rem;
+}
+
+.optionLabel{
+    padding: 0.8vw 2vw !important;
+    font-size: 1.1rem;
+}
+
+
+
+.content label:not(.optionLabel){
+    padding-top: 2vw;
+    font-size: 1.2rem;
+    padding-bottom: 1vw;
+
+}
+
+.numberInput {
+  margin-top: 1vw;
+}
+
+.numberInput button {
+  width: 3.5vw;
+  height: 3.5vw;
+}
+
+.numberInput button:after {
+  font-size: 1.6rem;
+}
+
+.numberInput input[type=number] {
+  font-size: 1.3rem;
+  width: 3.5vw;
+  height: 3.5vw;
+}
+  .backArrow{
+    font-size: 1.4rem;
+  }
+  .backArrow svg{
+    width: 3vw;
+  }
+}
+ 
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+  .productPage{
+    width: 80%;
+    margin: 0 10%;
+    padding: 10vw 0;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.images{
+    width: 100%;
+}
+
+.imgCarousel{
+    height: 20vw;
+    margin-top: 1vw;
+}
+.imgCarousel img{
+    height: 20vw;
+}
+
+.content{
+    --vertical-padding: 1vw;
+    width: 95%;
+}
+
+.title{
+    font-size: 3.4rem;
+    margin-top: 5vw !important;
+}
+
+.description{
+    font-size: 1.6rem;
+    margin-top: 3vw;
+    line-height: 2.5rem;
+}
+
+.price{
+    font-size: 2.6rem;
+    margin-top: 3.5vw;
+}
+
+.oldPrice{
+    margin-left: 0.6vw;
+    font-size: 1.8rem;
+}
+
+.optionLabel{
+    padding: 1.4vw 4vw !important;
+    font-size: 1.4rem;
+}
+
+
+
+.content label:not(.optionLabel){
+    padding-top: 3vw;
+    font-size: 1.6rem;
+    padding-bottom: 2vw;
+
+}
+
+.numberInput {
+  margin-top: 1vw;
+}
+
+.numberInput button {
+  width: 8vw;
+  height: 8vw;
+}
+
+.numberInput button:after {
+  font-size: 2rem;
+}
+
+.numberInput input[type=number] {
+  font-size: 1.6rem;
+  width: 8vw;
+  height: 8vw;
+}
+  .backArrow{
+    font-size: 1.6rem;
+  }
+  .backArrow svg{
+    width: 6vw;
+  }
+}

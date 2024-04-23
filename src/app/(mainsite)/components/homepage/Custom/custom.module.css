@@ -1,0 +1,54 @@
+.custom{
+    position: relative;
+    padding: calc(var(--section-padding-top) * 2) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+}
+
+.custom h2{
+    font-size: 5rem;
+}
+
+.custom p{
+    width: 40%;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 150%;
+}
+
+
+/* SMALL LAPTOP STYLES */
+@media only screen and (min-width: 991px) and (max-width: 1400px){
+
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    .custom{
+        gap: 3vw;
+    }
+    
+    .custom p{
+        width: 60%;
+        font-size: 2rem;
+    }
+}
+
+ /* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .custom{
+        gap: 5vw;
+    }
+    
+    .custom h2{
+        font-size: 4.5rem;
+    }
+    
+    .custom p{
+        width: 80%;
+        font-size: 1.9rem;
+    }
+}

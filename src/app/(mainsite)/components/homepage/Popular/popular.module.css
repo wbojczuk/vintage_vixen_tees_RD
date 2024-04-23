@@ -1,0 +1,88 @@
+.merch{
+    position: relative;
+    padding: var(--section-padding-top) 0;
+    background: var(--gradient-top);
+    border-top: 8px solid white;
+    border-bottom: 8px solid white;
+}
+
+.merch h2{
+    text-align: center;
+    font-size: 5rem;
+}
+
+.merchWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw;
+    padding: 4vw 0 8vw 0;
+}
+
+.item{
+    width: 20%;
+}
+
+.item img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+}
+
+.item h4{
+padding-top: 1vw;
+font-size: 1.4rem;
+}
+
+.price{
+    margin: 1vw 0;
+    font-size: 1.2rem;
+}
+
+
+/* SMALL LAPTOP STYLES */
+@media only screen and (min-width: 991px) and (max-width: 1400px){
+
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    .merchWrapper{
+        gap: 6vw;
+        padding: 8vw 0 12vw 0;
+    }
+    
+    .item{
+        width: 25%;
+    }
+    .item h4{
+        padding-top: 1.5vw;
+        }
+        
+        .price{
+            margin: 1.5vw 0;
+        }
+}
+
+ /* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .merchWrapper{
+        gap: 10vw;
+        padding: 10vw 0 16vw 0;
+        flex-direction: column;
+    }
+    
+    .item{
+        width: 60%;
+    }
+    .item h4{
+        padding-top: 2vw;
+        font-size: 1.6rem;
+        }
+        
+        .price{
+            margin: 2vw 0;
+            font-size: 1.4rem;
+        }
+}

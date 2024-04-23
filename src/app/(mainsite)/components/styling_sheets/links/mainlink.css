@@ -1,0 +1,35 @@
+.main-link{
+  font-family: var(--primary-font);
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: 0.8vw 3.2vw;
+  color: var(--primary-text-color);
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  border: 2px solid var(--primary-text-color);
+  text-align: center;
+  min-width: 10vw;
+}
+
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+  .main-link{
+    font-size: 1.6rem;
+    padding: 1.5vw 4vw;
+    min-width: 15vw;
+  }
+  
+}
+ 
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+  .main-link{
+    font-size: 1.8rem;
+    padding: 2vw 10vw;
+    min-width: 20vw;
+  }
+}
