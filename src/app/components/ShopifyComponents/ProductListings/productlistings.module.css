@@ -7,11 +7,20 @@
     padding: 1vw 10%;
 }
 
+.listingHeading{
+    text-align: center;
+    padding: 2vw;
+    font-size: 5rem;
+}
+
 /* TABLET STYLES */
 @media only screen and (min-width: 650px) and (max-width: 990px){
  .listings{
     padding: 1.5vw 10%;
  }
+ .listingHeading{
+    padding: 3vw;
+}
 }
  
 /* MOBILE STYLES */
@@ -19,5 +28,9 @@
     .listings{
         width: 90%;
         padding: 2vw 5%;
+    }
+    .listingHeading{
+        padding: 4vw;
+        font-size: 4.5rem;
     }
 }

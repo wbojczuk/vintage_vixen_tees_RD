@@ -51,9 +51,13 @@ export default function ProductListings() {
     }
 
   return (
+    <>
+    <h2 className={styles.listingHeading}>Tee Shirts</h2>
     <section className={styles.listings}>
+        
         {isLoading && <Loading />}
         {productCardElems}
     </section>
+    </>
   )
 }

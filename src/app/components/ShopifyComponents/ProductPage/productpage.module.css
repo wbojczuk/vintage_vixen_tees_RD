@@ -300,6 +300,7 @@
 
 .optionLabel{
     padding: 0.8vw 2vw !important;
+    margin: 0.3vw 0;
     font-size: 1.1rem;
 }
 
@@ -342,7 +343,7 @@
 @media only screen and (max-width: 649px){
   .productPage{
     width: 80%;
-    margin: 0 10%;
+    margin: 4vw 10%;
     padding: 10vw 0;
     align-items: flex-start;
     justify-content: flex-start;
@@ -390,6 +391,7 @@
 .optionLabel{
     padding: 1.4vw 4vw !important;
     font-size: 1.4rem;
+    margin: 0.5vw 0;
 }
 
 
