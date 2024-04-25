@@ -30,7 +30,9 @@ export default function CartItem(props: cartItemProps) {
         if(!props.isUpdating){
             props.setIsUpdating(true)
             const qtyAvail: qtyAvail = await checkQty(handle)
-            let isAvail = true
+            console.log(handle)
+            if(true){
+                        let isAvail = true
             qtyAvail.variants.forEach((item, i)=>{
                 if((item.id == props.variant.id) && !((qtyAvail.variants[i].quantityAvailable == 0) && qtyAvail.variants[i].availableForSale) && (newQty > qtyAvail.variants[i].quantityAvailable!)){
                   isAvail = false
@@ -45,6 +47,7 @@ export default function CartItem(props: cartItemProps) {
             }else{
                 alert("There is not enough available to add more.")
             }
+        }
             props.setIsUpdating(false)
         }
     }
@@ -58,19 +61,21 @@ export default function CartItem(props: cartItemProps) {
         setData()
         async function setData(){
             const avail: qtyAvail = await checkQty(handle)
-            avail.variants.forEach((variant)=>{
-                if((variant.id == props.variant.id)){
-                    if((!variant.availableForSale)){
-                        removeAll()
-                    }else if(variant.availableForSale && (variant.quantityAvailable != 0)){
-                        const amt =  variant.quantityAvailable - props.quantity
-                        if(amt < 0){
-                          qtyElem.current.value = variant.quantityAvailable
-                          qtyHandler()
+            if(avail !== null){
+                avail.variants.forEach((variant)=>{
+                    if((variant.id == props.variant.id)){
+                        if((!variant.availableForSale)){
+                            removeAll()
+                        }else if(variant.availableForSale && (variant.quantityAvailable != 0)){
+                            const amt =  variant.quantityAvailable - props.quantity
+                            if(amt < 0){
+                              qtyElem.current.value = variant.quantityAvailable
+                              qtyHandler()
+                            }
                         }
                     }
-                }
-              })
+                  })
+            }
         }
     }, [])
     

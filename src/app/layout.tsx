@@ -46,11 +46,12 @@ export default function RootLayout({
       </Script></>}
 
        <AppWrapper elems={<>
+        <Cart/>
         <Navbar />
 
         {children}
 
-        <Cart/>
+        
 
         <Footer />
        </>}/>

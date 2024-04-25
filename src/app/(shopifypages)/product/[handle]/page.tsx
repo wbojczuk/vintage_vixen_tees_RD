@@ -30,7 +30,7 @@ export async function generateMetadata({params}: {params: {handle: string}}): Pr
 }
 
 export async function generateStaticParams(){
-  const products = await client.product.fetchAll(25)
+  const products = await client.product.fetchAll(100)
   const handles = products.map((product:productType)=>{
     const handle = product.handle
     return {handle}

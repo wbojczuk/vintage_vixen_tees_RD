@@ -72,7 +72,7 @@ class ShopProvider extends Component {
       });
       return uoclient.graphQLClient
         .send(qtyQuery)
-        .then((res) => JSON.parse(JSON.stringify(res.model.productByHandle)))
+        .then((res) => {console.log(JSON.parse(JSON.stringify(res.model.productByHandle)));return JSON.parse(JSON.stringify(res.model.productByHandle))})
         .catch(() => null);
   }
 
