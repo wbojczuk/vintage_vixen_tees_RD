@@ -49,7 +49,7 @@
 
 .content p{
     padding: 2.5vw 0;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 220%;
 }
 
@@ -93,7 +93,7 @@
     }
     .content p{
         padding: 3vw 0;
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         line-height: 240%;
     }
 }
@@ -111,7 +111,7 @@
         width: 80vw;
     }
     .content p{
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         padding: 6vw 0;
     }
 }

@@ -1,7 +1,7 @@
 .productPage{
     display: inline-flex;
     width: 60%;
-    margin: 0 20%;
+    margin: 2vw 20%;
     padding: 4vw 0;
     align-items: flex-start;
     justify-content: space-between;
@@ -53,7 +53,6 @@
     font-family: var(--secondary-font);
     font-size: 3rem;
     margin-top: 2vw !important;
-    color: var(--primary-color);
 }
 
 .description{
@@ -68,7 +67,6 @@
     font-weight: 400;
     font-size: 1.8rem;
     margin-top: 1.5vw;
-    color: var(--primary-color);
     font-weight: 500;
     padding-bottom: 0vw;
 }
@@ -107,8 +105,8 @@
 }
 
 .optionInput:checked+.optionLabel{
-    background-color: var(--primary-color);
-    color: var(--secondary-text-color);
+    background-color: var(--primary-text-color);
+    color: var(--primary-color);
     border-color: var(--primary-color);
 }
 
@@ -117,8 +115,8 @@
 }
 
 .content input:not(input[type='submit']):not(input[type='hidden']):focus, .content textarea:focus, .content select:focus, .numberInput button:focus{
-    border: 1px solid var(--primary-color) !important;
-    outline: 1px solid var(--primary-color) !important;
+    border: 1px solid var(--primary-color);
+    outline: 1px solid var(--primary-color);
 }
 
 .content label:not(.optionLabel){
@@ -140,7 +138,12 @@
     -moz-appearance: textfield;
     appearance: textfield;
     border-radius: 0px;
+    background-color: transparent;
   }
+
+
+
+
   
   .numberInput input[type=number]::-webkit-inner-spin-button,
   .numberInput input[type=number]::-webkit-outer-spin-button {
@@ -172,6 +175,10 @@
     border: 1px solid var(--disabled-grey);
     outline: 1px solid transparent !important;
     color: var(--primary-text-color);
+  }
+
+  .numberInput button:focus, .numberInput button:active{
+    border: 1px solid white !important;
   }
   
   .numberInput button:after {
@@ -212,7 +219,7 @@
   
   .numberInput input[type=number] {
     font-size: 1.2rem;
-    border: 1px solid var(--disabled-grey) !important;
+    border: 1px solid var(--disabled-grey);
     border-left: none !important;
     border-right: none !important;
     outline: 1px solid transparent !important;
@@ -220,6 +227,9 @@
     text-align: center;
     width: 3vw;
     height: 3vw;
+  }
+  .numberInput input[type="number"]:focus{
+    border: 1px solid white !important;
   }
   .backArrow{
     transform: translateX(20px);
@@ -230,7 +240,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    color: var(--primary-color);;
+    color: var(--primary-text-color);;
     font-size: 1.2rem;
     text-decoration: none;
   }
@@ -239,7 +249,7 @@
     aspect-ratio: 1/1;
   }
   .backArrow svg path{
-    fill: var(--primary-color);
+    fill: var(--primary-text-color);
   }
 
   /* TABLET STYLES */

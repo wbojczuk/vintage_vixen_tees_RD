@@ -1,0 +1,95 @@
+.contactInfo{
+    padding: var(--section-padding-top) 15%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.textContent{
+    padding-top: 4vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.textContent h2{
+ font-size: 2rem;
+}
+
+.textContent p{
+    margin: 1vw 0 2vw;
+    width: 60%;
+    font-size: 1.2rem;
+    line-height: 200%;
+}
+
+.contactItem{
+    display: inline-flex;
+    text-decoration: none;
+    color: var(--primary-text-color);
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    font-size: 1.1rem;
+    margin: 0.5vw 0;
+}
+
+.contactItem svg{
+    width: 3vw;
+    height: 3vw;
+}
+
+/* TABLET STYLES */
+@media only screen and (min-width: 650px) and (max-width: 990px){
+    .contactInfo{
+        padding: var(--section-padding-top) 5%;
+    }
+    .textContent p{
+        width: 80%;
+    }
+    .contactItem svg{
+        width: 4vw;
+        height: 4vw;
+    }
+}
+ 
+/* MOBILE STYLES */
+@media only screen and (max-width: 649px){
+    .contactInfo{
+        padding: var(--section-padding-top) 15%;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .textContent{
+        padding-top: 8vw;
+        align-items: center;
+    }
+    
+    .textContent h2{
+     font-size: 1.6rem;
+     text-align: center;
+    }
+    
+    .textContent p{
+        margin: 2vw 0 3vw;
+        width: 80%;
+        font-size: 1.3rem;
+        text-align: center;
+        line-height: 200%;
+    }
+    
+    .contactItem{
+        gap: 2vw;
+        font-size: 1.2rem;
+        margin: 1vw 0;
+    }
+    
+    .contactItem svg{
+        width: 6vw;
+        height: 6vw;
+    }
+    
+}
