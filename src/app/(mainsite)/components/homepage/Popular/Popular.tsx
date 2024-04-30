@@ -1,13 +1,27 @@
 "use client"
 import Link from 'next/link';
 import styles from './popular.module.css';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ShopContext } from '@/app/shopify/shopContext';
 import formatCurrency from '@/app/shopify/formatCurrency';
 
 export default function Popular(){
     const {products}: {products: productType[]} = useContext(ShopContext)
-    const merchItems = products.map((product, i)=>{
+    const [localProducts, setLocalProducts]: [localProducts: productType[], setLocalProducts: any] = useState([])
+    useEffect(()=>{
+        if(products.length > 0){
+            let productsFiltered = products.filter((product)=>{
+                const regex = new RegExp(`Tee Shirt`, "ig")
+                if(regex.test(product.title)){
+                    return true
+                }else{
+                    return false
+                }
+            })
+            setLocalProducts(productsFiltered)
+        }
+    }, [products])
+    const merchItems = localProducts.map((product, i)=>{
        if(i < 3){
         return(
             <div key={i} className={styles.item}>

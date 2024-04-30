@@ -19,6 +19,7 @@
     align-items: center;
     justify-content: center;
     gap: 2vw;
+    flex-wrap: wrap;
 }
 
 /* TABLET STYLES */
@@ -40,5 +41,9 @@
     .listingHeading{
         padding: 4vw;
         font-size: 4.5rem;
+    }
+    .collections{
+        padding: 4vw 0;
+        gap: 4vw;
     }
 }

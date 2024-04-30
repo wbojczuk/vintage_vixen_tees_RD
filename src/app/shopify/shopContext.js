@@ -21,7 +21,7 @@ class ShopProvider extends Component {
   }
 
   getProducts = async () => {
-    const products = client.product.fetchAll(25)
+    const products = client.product.fetchAll(100)
     return products
   }
 
