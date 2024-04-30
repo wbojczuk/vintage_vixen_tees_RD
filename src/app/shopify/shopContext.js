@@ -82,9 +82,18 @@ class ShopProvider extends Component {
     this.setState({ checkout: checkout });
   };
   fetchCheckout = async (checkoutId) => {
-    client.checkout.fetch(checkoutId).then((checkout) => {
-      this.setState({ checkout: checkout });
-    });
+    client.checkout.fetch(checkoutId)
+    .then((checkout) => {
+      if(checkout.completedAt === null){
+        this.setState({ checkout: checkout });
+      }else{
+        this.createCheckout()
+      }
+      
+    })
+    .catch((err)=>{
+      console.log("HEY")
+    })
   };
   addItemToCheckout = async (variantId, quantity) => {
     const lineItemToAdd = [

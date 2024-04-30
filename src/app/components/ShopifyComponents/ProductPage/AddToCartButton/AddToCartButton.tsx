@@ -23,7 +23,7 @@ export default function AddToCartButton(props:{qtyAvail: qtyAvail, variantID: st
             let qtyAvail = 0
 
             props.qtyAvail.variants.forEach((variant,i)=>{
-              if((variant.id == props.variantID) && !(variant.availableForSale && variant.quantityAvailable == 0) && (variant.quantityAvailable < props.qty)){
+              if((variant.id == props.variantID) && !(variant.availableForSale && variant.quantityAvailable <= 0) && (variant.quantityAvailable < props.qty)){
                 console.log("HEY")
                 qtyAvail = variant.quantityAvailable
                 isAvail = false
