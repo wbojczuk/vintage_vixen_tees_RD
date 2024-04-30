@@ -13,6 +13,14 @@
     font-size: 5rem;
 }
 
+.collections{
+    padding: 2vw 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+}
+
 /* TABLET STYLES */
 @media only screen and (min-width: 650px) and (max-width: 990px){
  .listings{

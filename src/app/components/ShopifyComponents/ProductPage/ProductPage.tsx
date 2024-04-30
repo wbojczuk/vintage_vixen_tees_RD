@@ -402,7 +402,7 @@ export default function ProductPage({productHandle} : {productHandle: string}) {
       </div>
       <div className={styles.content} ref={contentRef}>
         <h1 className={styles.title}>{product.title}</h1>
-        <p className={styles.description}>{product.description}</p>
+        <p className={styles.description}>{product.description} <div className={styles.disclaimer}><br /><em>Design print sizes are not exact and may differ</em></div></p>
         {price}
 
        {(colorOptions.length > 0) && <> <label htmlFor="colorr">Color:</label>

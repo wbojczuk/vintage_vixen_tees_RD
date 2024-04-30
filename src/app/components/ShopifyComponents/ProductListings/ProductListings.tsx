@@ -9,17 +9,34 @@ import gsap from "gsap"
 
 export default function ProductListings() {
 
-
+    const [currentCollection, setCurrentCollection] = useState("Tee Shirt")
     const {products}: {products: productType[]} = useContext(ShopContext)
+    const [localProducts, setLocalProducts]: [localProducts: productType[], setLocalProducts: any] = useState([])
 
     const [isLoading, setIsLoading] = useState(true)
 
-    const productCardElems = products.map((product, i)=>{
+    const productCardElems = localProducts.map((product, i)=>{
         return <ProductCard key={i} product={product} />
     })
 
     useEffect(()=>{
         if(products.length > 0){
+            let productsFiltered = products.filter((product)=>{
+                const regex = new RegExp(`${currentCollection}`, "ig")
+                if(regex.test(product.title)){
+                    return true
+                }else{
+                    return false
+                }
+            })
+
+            setLocalProducts(productsFiltered)
+        }
+    }, [products, currentCollection])
+
+    useEffect(()=>{
+        if(localProducts.length > 0){
+            
             setIsLoading(false)
             const observer = new IntersectionObserver((elems)=>{
                 const elemArray: HTMLElement[] = []
@@ -38,7 +55,7 @@ export default function ProductListings() {
                 observer.observe(elem)
             })
         }
-    }, [products])
+    }, [localProducts])
 
     function animateElems(elems: HTMLElement[]){
         gsap.to(elems, {
@@ -52,7 +69,13 @@ export default function ProductListings() {
 
   return (
     <>
-    <h2 className={styles.listingHeading}>Tee Shirts</h2>
+    <h2 className={styles.listingHeading}>{currentCollection}s</h2>
+    <div className={styles.collections}>
+        <button className="main-link" onClick={()=>{setCurrentCollection("Tee Shirt")}}>Tee Shirts</button>
+        <button className="main-link" onClick={()=>{setCurrentCollection("Tank Top")}}>Tank Tops</button>
+        <button className="main-link" onClick={()=>{setCurrentCollection("Hoodie")}}>Hoodies</button>
+        <button className="main-link" onClick={()=>{setCurrentCollection("Tote Bag")}}>Tote Bags</button>
+    </div>
     <section className={styles.listings}>
         
         {isLoading && <Loading />}
