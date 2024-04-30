@@ -66,7 +66,7 @@ export default function CartItem(props: cartItemProps) {
                     if((variant.id == props.variant.id)){
                         if((!variant.availableForSale)){
                             removeAll()
-                        }else if(variant.availableForSale && (variant.quantityAvailable >= 0)){
+                        }else if(variant.availableForSale && (variant.quantityAvailable > 0)){
                             const amt =  variant.quantityAvailable - props.quantity
                             if(amt < 0){
                               qtyElem.current.value = variant.quantityAvailable
