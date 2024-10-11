@@ -19,7 +19,7 @@ class ShopProvider extends Component {
       this.createCheckout()
     }
     if(!("lineItems" in this.state.checkout)){
-      createCheckout();
+      this.createCheckout();
       console.log("created new chekout")
     }
   }
