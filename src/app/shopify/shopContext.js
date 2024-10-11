@@ -18,7 +18,7 @@ class ShopProvider extends Component {
     } else {
       this.createCheckout()
     }
-    if(this.checkout.lineItems == undefined){
+    if(!this.checkout.lineItems){
       createCheckout();
       console.log("created new chekout")
     }
