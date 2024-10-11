@@ -18,7 +18,7 @@ class ShopProvider extends Component {
     } else {
       this.createCheckout()
     }
-    if(!this.checkout.lineItems){
+    if(!this.checkout.hasOwnProperty("lineItems")){
       createCheckout();
       console.log("created new chekout")
     }
