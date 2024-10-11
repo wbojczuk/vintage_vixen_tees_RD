@@ -14,6 +14,7 @@ export default function AddToCartButton(props:{qtyAvail: qtyAvail, variantID: st
     adding.current = false;
 
     async function buttonHandler(evt: any){
+     
       if(props.currentColor != "unselected"){
         if(props.currentSize != "unselected"){
           if(!adding.current){
@@ -22,7 +23,7 @@ export default function AddToCartButton(props:{qtyAvail: qtyAvail, variantID: st
             let isAvail = true
             let qtyAvail = 0
 
-            if(props.qtyAvail.variants !== undefined){
+            
               props.qtyAvail.variants.forEach((variant,i)=>{
                 if((variant.id == props.variantID) && !(variant.availableForSale && variant.quantityAvailable <= 0) && (variant.quantityAvailable < props.qty)){
                   qtyAvail = variant.quantityAvailable
@@ -35,10 +36,9 @@ export default function AddToCartButton(props:{qtyAvail: qtyAvail, variantID: st
                   }
                 })
               })
-            }else{
-              createCheckout();
-              console.log("created new chekout")
-            }
+            
+             
+            
 
             
 
