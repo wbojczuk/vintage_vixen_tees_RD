@@ -145,6 +145,7 @@ class ShopProvider extends Component {
       <ShopContext.Provider
         value={{
           ...this.state,
+          createCheckout: this.createCheckout,
           checkQty: this.checkQty,
           removeLineItem: this.removeLineItem,
           updateItemQuantity: this.updateItemQuantity,

@@ -8,7 +8,7 @@ import Loading from "../../Loading/Loading"
 export default function AddToCartButton(props:{qtyAvail: qtyAvail, variantID: string, qty: number, available: boolean, currentSize: string, currentColor: string}) {
   
   const buttonRef: any = useRef()
-    const {addItemToCheckout, openCart, checkout}: {addItemToCheckout: any, openCart: any, checkout: cartType}  = useContext(ShopContext)
+    const {createCheckout, addItemToCheckout, openCart, checkout}: {createCheckout: any, addItemToCheckout: any, openCart: any, checkout: cartType}  = useContext(ShopContext)
     const [addingState, setAddingState] = useState(false)
     const adding: any = useRef()
     adding.current = false;
@@ -22,19 +22,23 @@ export default function AddToCartButton(props:{qtyAvail: qtyAvail, variantID: st
             let isAvail = true
             let qtyAvail = 0
 
-            props.qtyAvail.variants.forEach((variant,i)=>{
-              if((variant.id == props.variantID) && !(variant.availableForSale && variant.quantityAvailable <= 0) && (variant.quantityAvailable < props.qty)){
-                console.log("HEY")
-                qtyAvail = variant.quantityAvailable
-                isAvail = false
-              }
-              checkout.lineItems.forEach((item, i)=>{
-                if((item.variant.id == variant.id) && ((item.quantity + props.qty) > qtyAvail) && !(variant.availableForSale && variant.quantityAvailable == 0)){
-                  
+            if(props.qtyAvail.variants !== undefined){
+              props.qtyAvail.variants.forEach((variant,i)=>{
+                if((variant.id == props.variantID) && !(variant.availableForSale && variant.quantityAvailable <= 0) && (variant.quantityAvailable < props.qty)){
+                  qtyAvail = variant.quantityAvailable
                   isAvail = false
                 }
+                checkout.lineItems.forEach((item, i)=>{
+                  if((item.variant.id == variant.id) && ((item.quantity + props.qty) > qtyAvail) && !(variant.availableForSale && variant.quantityAvailable == 0)){
+                    
+                    isAvail = false
+                  }
+                })
               })
-            })
+            }else{
+              createCheckout();
+              console.log("created new chekout")
+            }
 
             
 
